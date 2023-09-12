@@ -1,4 +1,4 @@
-# include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 //다음과 같은 구조의 이중 연결 리스트에서 아래의 프로그램을 완성하시오.
@@ -11,14 +11,12 @@ typedef struct DlistNode {
 
 void dinsert_last(DlistNode*head , int data) // 리스트의 가장 뒤에 추가
 {
-      DlistNode *node = (DlistNode *)malloc(sizeof(DlistNode));
+    DlistNode *node = (DlistNode *)malloc(sizeof(DlistNode));
     node->data=data;
     node->rlink=head;
     node->llink=head->llink;
-
     head->llink->rlink=node;
     head->llink=node;
-      
 }
 
 int get_circular_length(DlistNode *phead) // 이중 연결 리스트의 길이를 계산
